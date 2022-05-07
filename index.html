@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Balanced Teams</title>
+
+    <script src="./buildBalancedTeams.js" defer></script>
+    <script defer>
+      const players = fetch('./players.json').then(
+        response => {
+          const { team1, team2 } = buildBalancedTeams(response);
+          console.log(team1, team2);
+        }
+      );
+    </script>
+  </head>
+
+  <body>
+    <h1>Build Balanced Teams</h1>
+    <p>
+      <strong>Instructions:</strong>
+      <br>
+      <br>
+      1. Enter the names of the players in the text box below.
+      <br>
+    <div class="players"></div>
+    2. Click the button to generate the teams.
+    <button onclick="buildBalancedTeams(players)">Generate</button>
+  </body>
+
+</html>

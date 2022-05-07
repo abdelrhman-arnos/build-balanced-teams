@@ -1,3 +1,15 @@
+interface Player {
+	name: string;
+	weight: number;
+	available: boolean;
+	skills: string[];
+}
+
+interface Team {
+	weight: number;
+	players: Player[];
+}
+
 /**
  * Get random element from array, and remove it from the array
  */
@@ -38,40 +50,6 @@ function buildBalancedTeams(players: Player[]): {
 		}
 	}
 
+	console.log({ team1, team2 });
 	return { team1, team2 };
 }
-
-interface Player {
-	name: string;
-	weight: number;
-	available: boolean;
-	skills: string[];
-}
-
-interface Team {
-	weight: number;
-	players: Player[];
-}
-
-const players: Player[] = [
-	{ name: 'Arnos', weight: 6, available: true, skills: [] },
-	{ name: 'Mido', weight: 7, available: true, skills: [] },
-	{ name: 'Hani', weight: 9, available: true, skills: [] },
-	{ name: 'Adel', weight: 10, available: true, skills: [] },
-	{ name: 'Malek', weight: 6, available: true, skills: [] },
-	{ name: 'Abo Malek', weight: 0, available: false, skills: [] },
-	{ name: 'Tanawi', weight: 3, available: false, skills: [] },
-	{ name: 'Halabya', weight: 6, available: true, skills: [] },
-	{ name: 'Amr', weight: 4, available: false, skills: [] },
-	{ name: 'Eyad', weight: 6, available: true, skills: [] },
-	{ name: 'Lotfy', weight: 6, available: true, skills: [] },
-	{ name: 'Gom3a', weight: 8, available: true, skills: [] },
-	{ name: 'Helal', weight: 9, available: true, skills: [] },
-	{ name: 'Omar', weight: 0, available: true, skills: [] },
-	{ name: 'Soli', weight: 0, available: false, skills: [] },
-	{ name: 'Nash2t', weight: 4, available: true, skills: [] },
-	{ name: 'Bakry', weight: 0, available: false, skills: [] },
-	{ name: '<>', weight: 0, available: false, skills: [] },
-];
-
-console.log(buildBalancedTeams(players));
